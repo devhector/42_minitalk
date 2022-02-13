@@ -30,7 +30,8 @@ void bit(int bit, pid_t client)
 		if(character == '\0')
 		{
 			character = '\n';
-			kill(client, SIGUSR1);
+			(void)client;
+			// kill(client, SIGUSR1);
 		}
 		counter = 6;
 		c = character;
