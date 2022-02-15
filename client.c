@@ -37,13 +37,13 @@ void char_bin(pid_t pid, char c)
 	}
 }
 
-void handler(int sig, siginfo_t *info, void *context)
-{
-	(void)sig;
-	(void)context;
-	(void)info;
-	printf("End comunication\n");
-}
+// void handler(int sig, siginfo_t *info, void *context)
+// {
+// 	(void)sig;
+// 	(void)context;
+// 	(void)info;
+// 	printf("End comunication\n");
+// }
 
 void send_message(int pid, char *message)
 {
@@ -69,10 +69,10 @@ int main(int argc, char *argv[])
 	
 	pid = atoi(argv[1]);
 	msg = argv[2];
-	send_message(pid, msg);
-	act.sa_flags = SA_SIGINFO;
-	act.sa_sigaction = handler;
-	sigaction(SIGUSR1, &act, NULL);
+	// send_message(pid, msg);
+	// act.sa_flags = SA_SIGINFO;
+	// act.sa_sigaction = handler;
+	// sigaction(SIGUSR1, &act, NULL);
 	
 	return 0;
 }
