@@ -26,12 +26,12 @@ void char_bin(pid_t pid, char c)
 		if ((x & 1) > 0)
 		{
 			kill(pid, SIGUSR2);
-			usleep(1042);
+			usleep(2042);
 		}
 		else
 		{
 			kill(pid, SIGUSR1);
-			usleep(1042);
+			usleep(2042);
 		}
 		count --;
 	}
