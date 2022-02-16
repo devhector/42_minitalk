@@ -6,7 +6,7 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 13:57:28 by hectfern          #+#    #+#             */
-/*   Updated: 2022/02/16 12:09:52 by hectfern         ###   ########.fr       */
+/*   Updated: 2022/02/16 12:53:27 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	main(void )
 
 	ft_putstr_fd("PID: ", 1);
 	ft_putnbr_fd(getpid(), 1);
-	ft_putchar_fd("\n", 1);
+	ft_putchar_fd('\n', 1);
 	act.sa_sigaction = handler;
 	act.sa_flags = SA_SIGINFO;
 	sigaction(SIGUSR1, &act, NULL);

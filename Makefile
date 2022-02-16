@@ -8,7 +8,7 @@ CLIENT_C = src/client.c
 SERVER = server
 CLIENT = client
 
-LIBFT = libft.a
+LIBFT = libft/libft.a
 
 all: $(SERVER) $(CLIENT)
 
