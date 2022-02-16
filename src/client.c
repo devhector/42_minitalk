@@ -6,7 +6,7 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 13:56:52 by hectfern          #+#    #+#             */
-/*   Updated: 2022/02/16 15:42:52 by hectfern         ###   ########.fr       */
+/*   Updated: 2022/02/16 16:08:14 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	convert_bin(pid_t	pid, char c)
 	while (count >= 0)
 	{
 		x = c >> count;
-		if ((x & 1) > 0)
+		if ((x & 1) == 1)
 			kill(pid, SIGUSR2);
 		else
 			kill(pid, SIGUSR1);
