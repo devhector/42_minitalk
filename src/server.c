@@ -6,7 +6,7 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 13:57:28 by hectfern          #+#    #+#             */
-/*   Updated: 2022/02/16 12:53:27 by hectfern         ###   ########.fr       */
+/*   Updated: 2022/02/16 15:42:42 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	convert_bit(int bit, int *finish)
 {
-	static int	counter = 8;
+	static int	counter = 10;
 	static int	character = 0;
 
 	character += (bit << counter);
@@ -26,7 +26,7 @@ static void	convert_bit(int bit, int *finish)
 			character = '\n';
 			*finish = 1;
 		}
-		counter = 8;
+		counter = 10;
 		write(1, &character, 1);
 		character = 0;
 	}

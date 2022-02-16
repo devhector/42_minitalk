@@ -6,7 +6,7 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 13:56:52 by hectfern          #+#    #+#             */
-/*   Updated: 2022/02/16 11:55:49 by hectfern         ###   ########.fr       */
+/*   Updated: 2022/02/16 15:42:52 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	convert_bin(pid_t	pid, char c)
 	int	x;
 	int	count;
 
-	count = 8;
+	count = 10;
 	while (count >= 0)
 	{
 		x = c >> count;
