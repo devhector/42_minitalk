@@ -5,6 +5,8 @@ RM = /bin/rm -f
 SERVER_C = src/server.c
 CLIENT_C = src/client.c
 
+INCLUDE = include/
+
 SERVER = server
 CLIENT = client
 
@@ -17,11 +19,11 @@ $(LIBFT):
 
 $(SERVER): $(LIBFT)
 	@echo "Compiling $(SERVER)"
-	@$(CC) $(CFLAGS) -I include $(SERVER_C) $(LIBFT) -o $(SERVER)
+	@$(CC) $(CFLAGS) -I $(INCLUDE) $(SERVER_C) $(LIBFT) -o $(SERVER)
 
 $(CLIENT): $(LIBFT)
 	@echo "Compiling $(CLIENT)"
-	@$(CC) $(CFLAGS) -I include $(CLIENT_C) $(LIBFT) -o $(CLIENT)
+	@$(CC) $(CFLAGS) -I $(INCLUDE) $(CLIENT_C) $(LIBFT) -o $(CLIENT)
 
 clean:
 			@echo "Cleaning"
