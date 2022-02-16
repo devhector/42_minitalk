@@ -6,7 +6,7 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 19:33:11 by hectfern          #+#    #+#             */
-/*   Updated: 2022/02/16 13:55:28 by hectfern         ###   ########.fr       */
+/*   Updated: 2022/02/16 16:03:28 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 # include <signal.h>
 # include <sys/types.h>
 # include <unistd.h>
-# include "libft.h"
+# include "../libft/libft.h"
 #endif
