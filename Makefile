@@ -10,9 +10,11 @@ INCLUDE = include/
 SERVER = server
 CLIENT = client
 
+NAME = $(SERVER) $(CLIENT)
+
 LIBFT = libft/libft.a
 
-all: $(SERVER) $(CLIENT)
+all: $(NAME)
 
 $(LIBFT):
 	make -C libft
