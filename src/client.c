@@ -6,7 +6,7 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 13:56:52 by hectfern          #+#    #+#             */
-/*   Updated: 2022/02/16 16:08:14 by hectfern         ###   ########.fr       */
+/*   Updated: 2022/02/16 16:19:57 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ static void	convert_bin(pid_t	pid, char c)
 		else
 			kill(pid, SIGUSR1);
 		count --;
-		while (!g_signal_control)
+		while (g_signal_control)
 			pause();
-		g_signal_control = 0;
+		g_signal_control = 1;
 	}
 }
 
@@ -47,7 +47,7 @@ static void	send_message(int pid, char *message)
 static void	handler(int sig)
 {
 	if (sig == SIGUSR1)
-		g_signal_control = 1;
+		g_signal_control = 0;
 	else if (sig == SIGUSR2)
 		ft_putstr_fd("Message sent!\n", 1);
 }
@@ -65,7 +65,7 @@ int	main(int argc, char *argv[])
 		ft_putstr_fd("Usage: ./client <pid> [message]\n", 1);
 		return (1);
 	}
-	g_signal_control = 0;
+	g_signal_control = 1;
 	send_message(atoi(argv[1]), argv[2]);
 	return (0);
 }
