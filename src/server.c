@@ -6,7 +6,7 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 13:57:28 by hectfern          #+#    #+#             */
-/*   Updated: 2022/02/16 15:42:42 by hectfern         ###   ########.fr       */
+/*   Updated: 2022/02/17 14:00:14 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ static void	handler(int sig, siginfo_t *info, void *context)
 	int	finish;
 
 	finish = 0;
-	if (!sig)
-		return ;
 	convert_bit(SIGUSR2 == sig, &finish);
 	kill(info->si_pid, SIGUSR1);
 	if (finish)

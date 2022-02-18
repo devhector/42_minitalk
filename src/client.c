@@ -6,13 +6,22 @@
 /*   By: hectfern <hectfern@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 13:56:52 by hectfern          #+#    #+#             */
-/*   Updated: 2022/02/16 18:57:08 by hectfern         ###   ########.fr       */
+/*   Updated: 2022/02/17 20:28:38 by hectfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/minitalk.h"
 
 static int	g_signal_control;
+
+static void	send_signal(int pid, int signal)
+{
+	if (kill(pid, signal) == -1)
+	{
+		ft_putstr_fd("Connection not established\n", 1);
+		exit(1);
+	}
+}
 
 static void	convert_bin(pid_t	pid, char c)
 {
@@ -24,9 +33,9 @@ static void	convert_bin(pid_t	pid, char c)
 	{
 		x = c >> count;
 		if ((x & 1) == 1)
-			kill(pid, SIGUSR2);
+			send_signal(pid, SIGUSR2);
 		else
-			kill(pid, SIGUSR1);
+			send_signal(pid, SIGUSR1);
 		count --;
 		while (g_signal_control)
 			pause();
